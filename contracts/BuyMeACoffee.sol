@@ -79,6 +79,7 @@ contract BuyMeACoffee is Ownable{
      */
     function changeOwner(address newOwner) public payable onlyOwner {
         require(msg.value > 0, "need more than 0 eth to change the owner");
+        transferOwnership(newOwner);
         currentOwner = payable(newOwner);
     }
 
