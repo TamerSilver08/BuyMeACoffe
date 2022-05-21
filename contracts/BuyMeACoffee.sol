@@ -77,7 +77,7 @@ contract BuyMeACoffee is Ownable{
     /**
      * @dev change the owner of the project 
      */
-    function changeOwner(address newOwner) public payable {
+    function changeOwner(address newOwner) public payable onlyOwner {
         require(msg.value > 0, "need more than 0 eth to change the owner");
         currentOwner = payable(newOwner);
     }
